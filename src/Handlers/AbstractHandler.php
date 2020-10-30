@@ -14,6 +14,7 @@ use SMartins\Exceptions\Response\ErrorHandledCollectionInterface;
 use SMartins\Exceptions\Response\ErrorHandledInterface;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Throwable;
 
 abstract class AbstractHandler
 {
@@ -55,7 +56,7 @@ abstract class AbstractHandler
      *
      * @param Exception $e
      */
-    public function __construct(Exception $e)
+    public function __construct(Throwable $e)
     {
         $this->exception = $e;
     }
